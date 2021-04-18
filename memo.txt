@@ -1,0 +1,25 @@
+#1. initial setup
+github.com/new
+mkdir instaclone
+cd instaclone
+code .
+git init
+git remote add origin {https://~ github repo}
+vscode extension gitignore 
+->설치 후 command palette에서 gitignore->node 입력 해서 추가)
+npm init -y
+package.json에서 git repo 내용이 포함되어 있음을 확인
+git add .
+git commit -m "Backend setup"
+git push origin maser
+
+npm i apollo-server graphql
+server.js 작성
+
+npm i nodemon --save-dev (파일 저장하면 서버 재시작)
+> package.json
+"scripts":{
+    "dev": "nodemon --exec node server.js"
+}
+npm run dev 로 확인
+
