@@ -13,6 +13,7 @@ git add .
 git commit -m "Backend setup"
 git push origin maser
 
+#2. Apollo server
 npm i apollo-server graphql
 server.js 작성
 
@@ -22,4 +23,24 @@ npm i nodemon --save-dev (파일 저장하면 서버 재시작)
     "dev": "nodemon --exec node server.js"
 }
 npm run dev 로 확인
+
+#3. Babel node (Node 버전에 구애받지 않고 최신 자바스크립트 사용하기 위해 설치하고 셋업)
+npm install --save-dev @babel/core
+npm install @babel/preset-env --save-dev
+touch babel.config.json
+{
+  "presets": ["@babel/preset-env"]
+}
+-> production 에서는 babel 사용하지 않는다 (이미 babel로 컴파일된 자바스크립트 코드를 사용할것이므로)
+npm i @babel/node --save-dev
+> package.json
+"scripts":{
+    "dev": "nodemon --exec babel-node server" 로 수정
+}
+
+
+
+
+
+
 
