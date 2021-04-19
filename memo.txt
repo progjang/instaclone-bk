@@ -38,6 +38,24 @@ npm i @babel/node --save-dev
     "dev": "nodemon --exec babel-node server" 로 수정
 }
 
+# Database (Postgresql)
+sudo apt update
+sudo apt install postgresql postgresql-contrib
+psql --version(버전번호 확인)
+sudo service postgresql start (status/start/stop 으로 시작및중지)
+sudo -u postgres psql
+postgres=# create user {username} password 'xxxx';
+postgres=# alter user {username} with createdb replication (권한부여)
+postgres=# create database db_instaclone owner={name};
+윈도우즈에 pgamin4 설치(UI)
+
+# Prisma (node와 DB 연결해주는 ORM)
+npm install prisma -D
+npx prisma init
+prisma
+npx prisma migrate dev --preview-feature
+>schema.prisma에 생성할 모델 정의
+>.env에 DB정보 수정
 
 
 
