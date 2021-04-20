@@ -70,3 +70,9 @@ movies폴더
 # dotenv 사용 (.env 가상환경 사용하기)
 npm i dotenv
 server.js 맨 위에 require("dotenv").config()
+const PORT = process.env.PORT 형식으로 사용하면 됨
+
+Recap 후에 프로젝트 시작을 위해
+(1)prisma 폴더(migration정보 있어서) & movies폴더 제거
+(2)데이터베이스 제거하고, 새로운 데이터베이스 생성
+----------------------------------------------------
