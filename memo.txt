@@ -57,8 +57,16 @@ npx prisma migrate dev --preview-feature
 >schema.prisma에 생성할 모델 정의
 >.env에 DB정보 수정
 
+# Architecture (divide and conquer)
+server.js (apollo-server)
+client.js (prisma/client)
+npm install graphql-tools@latest (latest버전 설치필요. 4.x 버전 설치되면 loadFileSync 못찾음)
+schema.js (graphql-tools 사용해서 아래 movies 폴더의 내용들을 합친다.)
+movies폴더
+-movies.typeDefs.js
+-movies.queries.js
+-movies.mutations.js
 
-
-
-
-
+# dotenv 사용 (.env 가상환경 사용하기)
+npm i dotenv
+server.js 맨 위에 require("dotenv").config()
