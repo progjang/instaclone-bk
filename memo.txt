@@ -75,4 +75,21 @@ const PORT = process.env.PORT 형식으로 사용하면 됨
 Recap 후에 프로젝트 시작을 위해
 (1)prisma 폴더(migration정보 있어서) & movies폴더 제거
 (2)데이터베이스 제거하고, 새로운 데이터베이스 생성
+drop database db_instaclone
+create database db_instaclone owner={유저명};
 ----------------------------------------------------
+# create user
+npm i bcrypt (for password hashing)
+bcrypt.hash(plainText, saltRounds)
+bcrypt.compare(plainText, hashedPassword)
+# login
+npm i jsonwebtoken (An implementation of Json Web Tokens)
+.env에 SECRET_KEY 입력 (randomkeygen.com에서 임의의 key 선택)
+jwt.sign({id:user.id}, process.env.SECRET_KEY)로 토큰생성
+jwt.io 에서 토근을 확인해볼 수 있음
+
+File Upload
+Maximum call stack size exceeded Error
+1. Delete node_modules
+2. Add scripts "preinstall": "npx npm-force-resolutions" in pakage.json
+3. npm i
